@@ -1,0 +1,153 @@
+nav{
+	width:100%;
+	height:45px;
+	background-color:rgba(255,255,255,0.85);
+	z-index:11;
+	position:fixed;
+	top:0;
+	border-bottom:1px solid rgb(19, 51, 76);
+	left:0;
+}
+
+
+.logo{
+font-family:'Quicksand',sans-serif;
+font-size:1.8em;
+margin-left:20px;
+margin-top:5px;
+}
+
+.profile{
+ float:right;
+ margin-right:7%;
+ width:100px;
+ height:30px;
+ font-size:1.3em;
+ margin-top:-33px;
+ font-family:'Quicksand',sans-serif;
+}
+
+.profile:hover{
+	cursor:pointer;
+}
+
+.side_menu{
+	background:rgba(19,51,76,0.8);
+	position:fixed;
+	height:100%;
+	width:18%;
+	left:0;
+	top:40px;
+}
+
+
+input,select{
+	font-size:1.1em;
+    width:320px;
+	height:40px;
+	border-bottom:1px solid  #A9A9A9;
+    border-left:0px solid #A9A9A9;
+    border-right: 0px solid #A9A9A9;
+    border-top:0px solid  #A9A9A9;
+ /*   box-shadow:0   10px 7px -10px rgba(0,0,0,0.5);
+    border-radius:3px;*/
+    font-family:'Quicksand',sans-serif;
+}
+
+option{
+	background-color:rgba(19,51,76,0.9);
+}
+
+input:focus{
+	outline: none;
+}
+
+select:focus{
+	outline:none;
+}
+
+textarea{
+	background:rgba(0,0,0,0.9);
+	color:#2bde4a;
+	position:fixed;
+	top:40px;
+	left:281px;
+	width:806px;
+	/*max-width:720px;*/
+	height:93%;
+	resize:none/*horizontal*/;
+	/*min-width:580px;*/
+	font-size:1.2em;
+	font-family:'Quicksand',sans-serif;
+}
+textarea:focus{
+	outline:none;
+}
+
+.run_btn{
+	position:absolute;
+	top:570px;
+	left:20px;
+	width:200px;
+	height:50px;
+	font-size:1.3em;
+	background:rgba(19,51,76,0.9);
+	border:1px solid rgba(19,51,76,1);
+	color:#fff;
+	font-family:'Quicksand',sans-serif;
+}
+
+.run_btn:hover{
+	cursor:pointer;
+	opacity:0.8;
+	border:1px solid #fff;
+	border-radius:10px;
+	transition:0.3s;
+}
+
+iframe{
+	position: fixed;
+	left:1100px;
+	top:41px;
+	width:437px;
+	height:94%;
+	border:none;
+	background:rgba(19,51,76,1);
+}
+
+.setting_icon{
+	width:50px;
+	position:absolute;
+	top:450px;
+	left:15px;
+}
+
+.setting_icon:hover{
+	cursor: pointer;
+}
+.setting_icon:active{
+	transform:scale(1.1);
+}
+
+.setting{
+	position:absolute;
+	top:140px;
+	height:300px;
+	background:pink;
+	width:0;
+}
+
+.setting_opts{
+	position:absolute;
+	left:20px;
+	color:#fff;
+}
+
+.save_settings_btn{
+	background:#fff;
+	border:1px solid #fff;
+	width:150px;
+	height:30px;
+	font-size:1em;
+	margin-left:22px;
+}

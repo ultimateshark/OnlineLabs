@@ -1,0 +1,133 @@
+body{
+	font-family:'Quicksand',sans-serif;
+}
+
+.login_text{
+font-size:1.9em;
+margin-left:37%;
+margin-top:50px;
+}
+
+.create_acc_text{
+	margin-left:38.5%;
+	margin-top:20px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.tab_btns{
+	margin-left:37%;
+	margin-top:50px;
+}
+
+.wrap{
+	margin-top:100px;
+}
+
+button{
+	font-family:'Quicksand',sans-serif;
+
+}
+
+.tab_btns button{
+	width:150px;
+	height:40px;
+	font-size:1.2em;
+	background:none;
+	font-family:'Quicksand',sans-serif;
+	border:1px solid rgb(19, 51, 76);
+}
+
+.tab_btns button:hover{
+	cursor:pointer;
+	opacity:0.8;
+	transform:scale(1.1);
+	transition:0.2s;
+}
+
+.active_tab{
+  	background:rgb(19, 51, 76) !important;
+ 	color:#fff;
+}
+
+input,select{
+	font-size:1.1em;
+    width:320px;
+	height:40px;
+	border-bottom:1px solid  #A9A9A9;
+    border-left:0px solid #A9A9A9;
+    border-right: 0px solid #A9A9A9;
+    border-top:0px solid  #A9A9A9;
+ /*   box-shadow:0   10px 7px -10px rgba(0,0,0,0.5);
+    border-radius:3px;*/
+    font-family:'Quicksand',sans-serif;
+}
+
+input:focus{
+	outline: none;
+}
+
+.login_student_btn{
+	width:320px;
+	margin-top:50px;
+	height:40px;
+	font-size:1.3em;
+	background:rgb(19, 51, 76);
+	border:1px solid rgb(19, 51, 76);
+	color:#fff;
+}
+
+.login_student_btn:hover{
+	opacity:0.9;
+	cursor:pointer;
+}
+
+.student_inputs{
+	margin-left:37%;
+	margin-top:25px;
+}
+
+
+
+.login_teacher_btn{
+	width:320px;
+	margin-top:50px;
+	height:40px;
+	font-size:1.3em;
+	background:rgb(19, 51, 76);
+	border:1px solid rgb(19, 51, 76);
+	color:#fff;
+}
+
+.login_teacher_btn:hover{
+	opacity:0.9;
+	cursor:pointer;
+}
+
+.teacher_inputs{
+	margin-left:37%;
+	margin-top:25px;
+}
+.eye_icon{
+	width:25px;
+	position:absolute;
+	left:60%;
+	top:45.5%;
+}
+
+.eye_icon{
+	cursor:pointer;
+}
+
+.hide{
+	display:none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active{
+	transition:background-color 500s;
+}

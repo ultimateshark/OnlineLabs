@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link rel="stylesheet" href="{{url_for('static',filename='css/editor.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300|Quicksand" rel="stylesheet">
+</head>
+<body>
+	 <nav style="height:40px;">
+        <div class="logo">Online Lab</div>
+        <div class="profile">Profile</div>
+    </nav>
+
+<div class="side_menu">
+
+
+
+	<form action="/run" method="POST" target="ouputif">
+	<select name="ext" id="lang" style="width:180px;margin-left:20px;margin-top:40px;border-bottom:1px solid #fff;background:transparent;color:#fff;">
+	<option selected disabled hidden>Select Language</option>
+	<option value="python">Python</option>
+	<option value="c">C</option>
+	<option value="java">Java</option>
+	<option value="cpp">C++</option>
+	<option value="sql">SQL</option>
+</select>
+<input type="text" name="filename" style="width:220px;margin-left:20px;margin-top:40px;border-bottom:1px solid #fff;background:transparent;color:#fff;" placeholder="Enter File Name">
+</div>
+
+<textarea onpaste="return false;" id="textarea" placeholder="Start Coding..." name="code"></textarea>
+<button class="run_btn">Run</button>
+</form>
+
+
+<iframe src="" name="ouputif"></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	$(document).delegate('#textarea', 'keydown', function(event) {
+  var keyCode = event.keyCode || event.which;
+
+  if (keyCode == 9) {
+
+    event.preventDefault();
+    var start = this.selectionStart;
+    var end = this.selectionEnd;
+
+
+    $(this).val($(this).val().substring(0, start) + "\t" + $(this).val().substring(end));
+
+    this.selectionStart = this.selectionEnd = start + 1;
+  }
+});
+
+</script>
+
+<script>
+$(document).ready(function () {
+    $('textarea.disablecopypaste').bind('copy paste', function (e) {
+       e.preventDefault();
+    });
+  });
+</script>
+</body>
+</html>

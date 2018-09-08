@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+   <link href="https://fonts.googleapis.com/css?family=Rajdhani:300|Quicksand" rel="stylesheet">
+    <title>login</title>
+</head>
+
+<body>
+<div class="flashmsg">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    	{% for message in messages %}
+      <div class="alert alert-danger alert-dismissible " style="color:red;position:fixed;z-index:999;margin-left:600px;margin-top:90px;font-size:1.3em;font-family:'Quicksand',sans-serif;" align="center">
+    <a href="#" class="close" data-dismiss="alert" style="background-color:silver;" aria-label="close">&times;</a>
+    <strong style="">{{ message }}</strong>
+  </div>
+      	{% endfor %}
+        {% endif %}
+  {% endwith %}
+</div>
+<div class="wrap">
+<div class="login_text">Login to your Account</div>
+<div class="create_acc_text">Don't have an Account? <a href="/signup-page">Create Now</a></div>
+
+  <div class="tab_btns">
+    <button class="student_tab_btn active_tab">Student</button> &nbsp; &nbsp;
+    <button class="teacher_tab_btn">Teacher</button>
+  </div>
+
+    <form class="login_student " action="/login/Student" method="POST">
+
+       <div class="student_inputs">
+        <input type="text" placeholder="Enter Your Email Id" name="username"><br>
+        <input type="password" placeholder="Enter Your Password" id="pass_input" name="passwd" style="margin-top:8px;"><br>
+
+        <img src="{{url_for('static',filename="images/eyec.png")}}" onclick="showPass()"  onclick="changeImg()" class="eye_icon " id="eyec">
+         <img src="{{url_for('static',filename="images/eye.png")}}" onclick="showPass()"  onclick="changeImg()" class="eye_icon hide" id="eye">
+        <button class="login_student_btn">Login</button>
+       </div>
+   </form>
+
+
+   <form class="login_teacher hide" action="/login/Teacher" method="POST">
+
+       <div class="teacher_inputs">
+        <input type="text" placeholder="Enter Your Email Id" name="username"><br>
+        <input type="password" placeholder="Enter Your Password" id="pass_input_t" name="passwd" style="margin-top:8px;"><br>
+
+        <img src="{{url_for('static',filename="images/eyec.png")}}" onclick="showPass()"  class="eye_icon " id="eyect">
+         <img src="{{url_for('static',filename="images/eye.png")}}" onclick="showPass()"  class="eye_icon hide" id="eyet">
+        <button class="login_teacher_btn">Login</button>
+       </div>
+   </form>
+           <!--  <button type="button">LOGIN</button>
+            <button type="button">SIGNUP</button>
+
+            <input type="text" placeholder="College name" size="35" id="" required>
+            <br>
+
+            <input type="text" placeholder="enter your name" size="35" id="" required>
+
+            <br>
+            <select id="" required>
+                <option value="">B-Tech</option>
+                <option value="">BSC</option>
+                <option value="">other</option>
+            </select>
+            <br>
+            <br>
+            <select id="" required>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+            </select>
+            <br>
+            <br>
+            <input type="text" placeholder="Section" size="35" id="">
+            <br>
+            <br>
+            <input type="number" placeholder="roll no" size="35" id="" required>
+            <br>
+            <br>
+            <input type="text" placeholder="student id" size="35" id="" required>
+            <br>
+            <br>
+            <input type="password" placeholder="password" id="" size="35" required>
+            <br>
+            <br>
+            <button type="submit">SUBMIT</button> -->
+
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function showPass(){
+        var pass=document.getElementById("pass_input");
+        var passt=document.getElementById("pass_input_t");
+
+        if(pass.type==='password'){
+            pass.type='text';
+        }else{
+            pass.type='password';
+        }
+
+        if(passt.type==='password'){
+            passt.type='text';
+        }else{
+            passt.type='password';
+        }
+    }
+</script>
+
+<script>
+$("#eyec").click(function(){
+    $("#eye").removeClass("hide");
+    $("#eyec").addClass("hide");
+});
+
+$("#eye").click(function(){
+    $("#eye").addClass("hide");
+    $("#eyec").removeClass("hide");
+});
+
+
+
+$("#eyect").click(function(){
+    $("#eyet").removeClass("hide");
+    $("#eyect").addClass("hide");
+});
+
+$("#eyet").click(function(){
+    $("#eyet").addClass("hide");
+    $("#eyect").removeClass("hide");
+});
+
+</script>
+
+<script >
+    $(".student_tab_btn").click(function(){
+        $(".login_teacher").addClass("hide");
+        $(".login_student").removeClass("hide");
+        $(".student_tab_btn").addClass("active_tab");
+        $(".teacher_tab_btn").removeClass("active_tab");
+
+    });
+
+    $(".teacher_tab_btn").click(function(){
+        $(".login_teacher").removeClass("hide");
+        $(".login_student").addClass("hide");
+        $(".teacher_tab_btn").addClass("active_tab");
+        $(".student_tab_btn").removeClass("active_tab");
+    });
+
+
+</script>
+
+</body>
+
+</html>

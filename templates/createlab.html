@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/teacherdash.css')}}">
+	    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300|Quicksand" rel="stylesheet">
+
+
+	<title></title>
+</head>
+<body>
+<div class="/user/Teacher/create_lab_box">
+	<div style="margin-left:650px;margin-top:190px;">
+	<form action="create-lab" method="POST">
+
+	<input type="text" name="name" placeholder="Enter Lab Name"><br>
+	<select id="sem" name="sem" style="width:180px;color:rgba(0,0,0,0.7);margin-top:8px;font-size:1em;"><br>
+		<option selected hidden disabled>Select Your Sem</option>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+	</select><br>
+	<input type="text" name="sec" placeholder="Enter Section" style="margin-top:8px;"><br>
+	<button class="lab_submit_btn">Create</button>
+</form>
+</div>
+
+</div>
+</body>
+</html>

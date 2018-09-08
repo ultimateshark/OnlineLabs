@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300|Quicksand|Permanent+Marker|Monoton" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo" style="font-family:'Monoton',sans-serif;">Online Lab</div>
+        <a href="login-sign-page"><button class="login_sign_btn">Login</button></a>
+    </nav>
+<div class="wrapper">
+    <div class="block_one" style="background:rgba(192,192,192,0.5);width:100%;position:absolute;left:0;">
+        <div class="text_one">COMPILE ONLINE<br>
+            <div class="sub_text_one">An IDE for your labs.<br><br>
+                <a href="/run-now"><button style="margin-left:90px;width:100px;height:40px;font-size:0.4em;border:#000;background:rgba(19,51,76,1);color:#fff;">Code Now</button></a>
+             </div>
+        </div>
+        <img src="{{url_for('static',filename='images/ide.PNG')}}" class="img1">
+    </div>
+
+
+    <div class="block_two">
+    	<div class="text_two">NOW MAKE YOUR LABS MORE PRODUCTIVE AND FRUITFUL</div>
+    	<div class="sub_text_two">Work efficiently during your labs and keep track of your records. </div>
+        <img src="{{url_for('static',filename='images/stu.jpg')}}" style="width:580px;height:590px;margin-left:50%;margin-top:-190px;">
+    </div>
+
+
+    <div class="block_three">
+        <div class="text_three">Now Teachers can manage labs easily and efficiently.</div>
+        <div class="sub_text_three">Keep track of your students progress and train them effectively.</div>
+        <img src="{{url_for('static',filename='images/tea.jpg')}}" style="width:580px;height:500px;position:absolute;top:100px;left:40px;">
+
+    </div>
+</div>
+    <footer>
+    	<div class="txt">Created By <br/> TEAM ULTIMATE</div>
+    </footer>
+</body>
+
+</html>

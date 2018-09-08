@@ -1,0 +1,29 @@
+.sign_wrap{
+	margin-top:150px;
+	
+}
+
+.create_text{
+	font-size:1.9em;
+	margin-left:35.5%;
+}
+
+.teacher_form{
+	margin-left:37%;
+	margin-top:40px;
+}
+
+.sign_btn{
+	width:320px;
+	margin-top:20px;
+	height:40px;
+	font-size:1.3em;
+	background:rgb(19, 51, 76);
+	border:1px solid rgb(19, 51, 76);
+	color:#fff;
+}
+
+.sign_btn:hover{
+	opacity:0.9;
+	cursor:pointer;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/sign.css')}}">
+
+   <link href="https://fonts.googleapis.com/css?family=Rajdhani:300|Quicksand" rel="stylesheet">
+</head>
+<body>
+<div class="sign_wrap" style="margin-top:120px;">
+
+<div class="create_text">Create Your New Account</div>
+
+<form class="teacher_form" action="/signup/Student" method="POST" >
+	<input type="text" placeholder="Enter Your Full Name" name="stuname"><br>
+	<input type="text" placeholder="Enter Your Id" name="username" style="margin-top:8px;"><br>
+	<input type="text" placeholder="Enter College Name" name="clgname" style="margin-top:8px;"><br>
+
+	<select id="course" name="course" style="width:160px;color:rgba(0,0,0,0.7);font-size:1em;margin-top:8px;">
+		<option selected hidden disabled>Select Your Course</option>
+		<option>B.Tech</option>
+		<option>BSc.</option>
+		<option>Other</option>
+	</select>
+
+	<select id="branch" name="branch" style="width:160px;color:rgba(0,0,0,0.7);font-size:1em;">
+		<option selected hidden disabled>Select Your Branch</option>
+		<option>CSE</option>
+		<option>IT</option>
+		<option>EC</option>
+		<option>EN</option>
+		<option>CE</option>
+		<option>ME</option>
+
+	</select>
+
+<br>
+	<select id="sem" name="sem" style="width:160px;color:rgba(0,0,0,0.7);font-size:1em;">
+		<option selected hidden disabled>Select Your Sem</option>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+	</select>
+
+<input type="text" placeholder="Enter Your Section" name="sec" style="width:160px;"><br>
+<input type="text" placeholder="Enter Your Roll Number" name="roll" style="margin-top:8px;"> <br>
+
+<!-- 	<input type="password" placeholder="Set Your Password" name="passwd" ><br><br>
+ -->	<button class="sign_btn">Create New Account</button>
+	</form>
+
+
+</div>
+</body>
+</html>
