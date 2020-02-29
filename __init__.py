@@ -35,55 +35,55 @@ db2.app=app
 
 
 def pass_generator(size=6, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+	return ''.join(random.choice(chars) for _ in range(size))
 
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+	return render_template("home.html")
 
 @app.route("/run",methods=["GET","POST"])
 def run():
-    extention=request.form["ext"]
-    name=request.form["filename"]
-    code=request.form["code"]
-    file_name=name+"."+extention
-    f=open(file_name,"w")
-    f.write(code)
-    f.close()
-    if extention == "java":
-        output=runp.run_java(file_name)
-        return render_template("output.html",output=output)
-    elif extention == "cpp":
-        output=runp.run_cpp(file_name)
-        return render_template("output.html",output=output)
-    elif extention == "c":
-        output=runp.run_c(file_name)
-        return render_template("output.html",output=output)
-    elif extention == "python":
-        output=runp.run_python(file_name)
-        return render_template("output.html",output=output)
-    elif extention == "sql":
-        userdb="groot"
-        password="mom0511"
-        output=runp.run_mysql(code,userdb,password)
-        return render_template("output.html",output=output)
+	extention=request.form["ext"]
+	name=request.form["filename"]
+	code=request.form["code"]
+	file_name=name+"."+extention
+	f=open(file_name,"w")
+	f.write(code)
+	f.close()
+	if extention == "java":
+		output=runp.run_java(file_name)
+		return render_template("output.html",output=output)
+	elif extention == "cpp":
+		output=runp.run_cpp(file_name)
+		return render_template("output.html",output=output)
+	elif extention == "c":
+		output=runp.run_c(file_name)
+		return render_template("output.html",output=output)
+	elif extention == "python":
+		output=runp.run_python(file_name)
+		return render_template("output.html",output=output)
+	elif extention == "sql":
+		userdb="groot"
+		password="mom0511"
+		output=runp.run_mysql(code,userdb,password)
+		return render_template("output.html",output=output)
 
 @app.route("/login-sign-page")
 def login_sign_page():
-    return render_template("login.html")
+	return render_template("login.html")
 
 @app.route("/signup-page")
 def signup_page():
-    return render_template("select.html")
+	return render_template("select.html")
 
 @app.route("/signup-page/Teacher")
 def signupTeacher():
-    return render_template("sign.html")
+	return render_template("sign.html")
 
 @app.route("/signup-page/Student")
 def signupStudent():
-    return render_template("signStu.html")
+	return render_template("signStu.html")
 @app.route("/run-now")
 def run_now():
 	return render_template("editor.html")
@@ -114,10 +114,10 @@ def user_log(type,path):
 
 @app.route("/login/<string:type>",methods=["GET","POST"])
 def login(type):
-    if request.method=="POST":
-        uname=request.form["username"]
-        passwd=request.form["passwd"]
-        if type=="Teacher":
+	if request.method=="POST":
+		uname=request.form["username"]
+		passwd=request.form["passwd"]
+		if type=="Teacher":
 			user=TeachersCredentials.query.filter_by(username=uname).all()
 			if len(user)==0:
 				flash("No such Teacher Present!!!")
@@ -129,7 +129,7 @@ def login(type):
 			else:
 				flash("Wrong Credentials")
 				return redirect(url_for("login_sign_page"))
-        else:
+		else:
 			user=StudentsCredentials.query.filter_by(username=uname).all()
 			if len(user)==0:
 				flash("No such Student Present!!!")
@@ -138,15 +138,15 @@ def login(type):
 				session['logged_in']=True
 				session['username']=uname
 				return redirect("/user/Student/home")
-    else:
-        flash("Not Allowed")
-        return redirect(url_for("login_sign_page"))
+	else:
+		flash("Not Allowed")
+		return redirect(url_for("login_sign_page"))
 
 
 @app.route("/signup/<string:type>",methods=["GET","POST"])
 def signup(type):
-    if request.method=="POST":
-        if type=="Teacher":
+	if request.method=="POST":
+		if type=="Teacher":
 			clgname=request.form["clgname"]
 			tecname=request.form["tecname"]
 			uname=request.form["username"]
@@ -164,7 +164,7 @@ def signup(type):
 			db1.session.commit()
 			flash("Password for first login sent to your mail!!!")
 			return redirect(url_for("login_sign_page"))
-        if type=="Student":
+		if type=="Student":
 			clgname=request.form["clgname"]
 			stuname=request.form["stuname"]
 			uname=request.form["username"]
@@ -214,4 +214,4 @@ def logout():
 
 app.secret_key = "this is nothing but a secret key"
 if __name__ == '__main__':
-    app.run(debug="true",port=8000 )
+	app.run(debug="true",port=8000 )

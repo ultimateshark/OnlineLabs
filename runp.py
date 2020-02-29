@@ -15,7 +15,7 @@ def run_c(file_name):
 def run_python(file_name):
     #subprocess.call(["python",file_name])
     a=subprocess.check_output(["python",file_name])
-    return a
+    return str(a)
 def run_mysql(code,userdb,password):
     conn=MySQLdb.connect(db="groot",passwd="mom0511",host="localhost",user="root")
     c=conn.cursor()
